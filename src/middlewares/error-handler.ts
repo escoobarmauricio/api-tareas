@@ -7,6 +7,8 @@ export const manejarErrores: ErrorRequestHandler = (error, _peticion, respuesta,
     respuesta.status(error.codigo).json({ message: error.message });
   } else if (error instanceof mongoose.Error.ValidationError) {
     respuesta.status(400).json({ message: 'Los datos no cumplen el modelo' });
+  } else if (error?.code === 11000) {
+    respuesta.status(400).json({ message: 'El email ya está registrado' });
   } else if (error?.type === 'entity.parse.failed') {
     respuesta.status(400).json({ message: 'JSON inválido' });
   } else if (error?.type === 'entity.too.large') {

@@ -6,6 +6,7 @@ import { repositorioTareas } from './task.repository';
 function datosTarea(entrada: unknown, alCrear: boolean): DatosTarea {
   const cuerpo = cuerpoObjeto(entrada);
   const titulo = texto(cuerpo.title, 'title', 120);
+  // Regla de negocio 1: solo existen estas tres prioridades.
   if (cuerpo.priority !== 'baja' && cuerpo.priority !== 'media' && cuerpo.priority !== 'alta') {
     throw new ErrorHttp(400, 'La prioridad debe ser baja, media o alta');
   }
@@ -16,6 +17,10 @@ function datosTarea(entrada: unknown, alCrear: boolean): DatosTarea {
   const fechaLimite = new Date(`${cuerpo.dueDate}T00:00:00.000Z`);
   if (Number.isNaN(fechaLimite.getTime()) || fechaLimite.toISOString().slice(0, 10) !== cuerpo.dueDate) {
     throw new ErrorHttp(400, 'La fecha límite no es válida');
+  }
+  // Regla de negocio 2: al crear una tarea, su vencimiento no puede ser pasado.
+  if (alCrear && cuerpo.dueDate < new Date().toISOString().slice(0, 10)) {
+    throw new ErrorHttp(400, 'La fecha límite no puede ser anterior a hoy (UTC)');
   }
   const completada = alCrear && cuerpo.completed === undefined ? false : cuerpo.completed;
   if (typeof completada !== 'boolean') {

@@ -1,0 +1,372 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "TP API de tareas",
+    "collectionId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+    "dateExported": "2026-11-10T18:14:46.251Z",
+    "version": "1.4",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8ea5fb71-8c5a-498d-ae04-9b9be23f11da",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "01 Registro - 201",
+            "url": "{{baseUrl}}/api/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2026-11-10T18:08:04.520Z",
+            "modified": "2026-11-10T18:08:04.520Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"name\": \"Ana\",",
+                    "  \"email\": \"ana@example.com\",",
+                    "  \"password\": \"ClavePrueba123!\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "cd88700e-9eb4-46e4-85aa-7c81aa9553f7",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "02 Login - 200",
+            "url": "{{baseUrl}}/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2026-11-10T18:08:04.521Z",
+            "modified": "2026-11-10T18:08:04.521Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"email\": \"ana@example.com\",",
+                    "  \"password\": \"ClavePrueba123!\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "8dffea1a-4369-4638-99bf-583bedad3369",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "03 Crear tarea - 201",
+            "url": "{{baseUrl}}/api/tasks",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2026-11-10T18:08:04.522Z",
+            "modified": "2026-11-10T18:08:04.522Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{token}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"title\": \"Estudiar Node.js\",",
+                    "  \"priority\": \"alta\",",
+                    "  \"dueDate\": \"2099-12-31\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "cbc0e78c-7b3e-4d3b-a6cd-5a7b9b8c1813",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "04 Listar tareas - 200",
+            "url": "{{baseUrl}}/api/tasks",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2026-11-10T18:08:04.523Z",
+            "modified": "2026-11-10T18:08:04.523Z",
+            "headers": []
+        },
+        {
+            "_id": "4fcaa462-9af2-4d26-a53c-5f85da1429ae",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "05 Buscar tarea - 200",
+            "url": "{{baseUrl}}/api/tasks/{{taskId}}",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2026-11-10T18:08:04.524Z",
+            "modified": "2026-11-10T18:08:04.524Z",
+            "headers": []
+        },
+        {
+            "_id": "0c16613e-caaa-498d-9d66-bf0a7c82850a",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "06 Registro duplicado - 400",
+            "url": "{{baseUrl}}/api/auth/register",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2026-11-10T18:08:04.525Z",
+            "modified": "2026-11-10T18:08:04.525Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"name\": \"Ana\",",
+                    "  \"email\": \"ana@example.com\",",
+                    "  \"password\": \"ClavePrueba123!\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "0f731017-e7e6-4589-81d4-4ed65439b813",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "07 Modificar - 200",
+            "url": "{{baseUrl}}/api/tasks/{{taskId}}",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2026-11-10T18:08:04.526Z",
+            "modified": "2026-11-10T18:08:04.526Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{token}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"title\": \"Estudiar Node.js\",",
+                    "  \"priority\": \"media\",",
+                    "  \"dueDate\": \"2099-12-31\",",
+                    "  \"completed\": true",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "c0c2f3cc-4c03-4f55-a847-c63c2affea89",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "08 Consultar cambio - 200",
+            "url": "{{baseUrl}}/api/tasks/{{taskId}}",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2026-11-10T18:08:04.527Z",
+            "modified": "2026-11-10T18:08:04.527Z",
+            "headers": []
+        },
+        {
+            "_id": "60161336-5e8c-42d3-aa00-4de38cc50815",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "09 Prioridad invalida - 400",
+            "url": "{{baseUrl}}/api/tasks",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2026-11-10T18:08:04.528Z",
+            "modified": "2026-11-10T18:08:04.528Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{token}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"title\": \"Estudiar Node.js\",",
+                    "  \"priority\": \"urgente\",",
+                    "  \"dueDate\": \"2099-12-31\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "6f176208-bbb7-46f0-a277-dffcfc99c589",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "10 Fecha pasada - 400",
+            "url": "{{baseUrl}}/api/tasks",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2026-11-10T18:08:04.529Z",
+            "modified": "2026-11-10T18:08:04.529Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{token}}"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"title\": \"Estudiar Node.js\",",
+                    "  \"priority\": \"alta\",",
+                    "  \"dueDate\": \"2000-01-01\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "9187e7dd-6795-4621-a4f1-4d87427519a9",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "11 Sin token - 401",
+            "url": "{{baseUrl}}/api/tasks",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2026-11-10T18:08:04.530Z",
+            "modified": "2026-11-10T18:08:04.530Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"title\": \"Estudiar Node.js\",",
+                    "  \"priority\": \"alta\",",
+                    "  \"dueDate\": \"2099-12-31\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "0a2d105d-5073-4125-b538-60c55c539cd4",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "12 Login incorrecto - 401",
+            "url": "{{baseUrl}}/api/auth/login",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2026-11-10T18:08:04.531Z",
+            "modified": "2026-11-10T18:08:04.531Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"email\": \"ana@example.com\",",
+                    "  \"password\": \"Incorrecta123\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "fd450c5d-883e-4741-b230-325755b61186",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "13 ID mal formado - 400",
+            "url": "{{baseUrl}}/api/tasks/id-invalido",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2026-11-10T18:08:04.532Z",
+            "modified": "2026-11-10T18:08:04.532Z",
+            "headers": []
+        },
+        {
+            "_id": "b0bb80af-1196-48fc-82b5-7a2145d0163e",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "14 Ruta inexistente - 404",
+            "url": "{{baseUrl}}/api/ruta-inexistente",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2026-11-10T18:08:04.533Z",
+            "modified": "2026-11-10T18:08:04.533Z",
+            "headers": []
+        },
+        {
+            "_id": "4414d989-bd34-4dfc-9799-a2bebf455472",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "15 Eliminar - 200",
+            "url": "{{baseUrl}}/api/tasks/{{taskId}}",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2026-11-10T18:08:04.534Z",
+            "modified": "2026-11-10T18:08:04.534Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "6e6ebcd6-9f21-478b-8abd-5a997ba5201d",
+            "colId": "424934df-461f-4b26-ac3e-bab3f4f79eb4",
+            "containerId": "",
+            "name": "16 Buscar eliminada - 404",
+            "url": "{{baseUrl}}/api/tasks/{{taskId}}",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2026-11-10T18:08:04.535Z",
+            "modified": "2026-11-10T18:08:04.535Z",
+            "headers": []
+        }
+    ],
+    "settings": {
+        "docs": [
+            "colección del tp de tareas"
+        ]
+    },
+    "ref": "1SMZDwe7Nashgt0Z3oT-DeSO45cA7LlnOl7uVEP-YqIOQbU-QB3usQdPFaC1qaJ2mFOFeJJuo6QmQ-7mYRfbwg"
+}
